@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.topbar {
+  background-color: #d9303e;
+  color: white;
+  padding: 20px 30px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.home-wrapper {
+  background: #f3f3f3;
+  min-height: 100vh;
+  padding: 50px 20px;
+}
+
+.search-card {
+  background: white;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.search-card h2 {
+  margin-bottom: 25px;
+  font-size: 22px;
+  color: #1d1d1d;
+}
+
+.search-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 220px;
+  gap: 20px;
+}
+
+.form-control {
+  height: 46px;
+  border: 1px solid #d6d6d6;
+  border-radius: 8px;
+  padding: 0 14px;
+  font-size: 16px;
+}
+
+.search-btn {
+  height: 46px;
+  border: none;
+  border-radius: 8px;
+  background-color: #c92d39;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #ad1f2a;
+}
+
+.results-section {
+  max-width: 980px;
+  margin: 30px auto 0;
+}
+
+.bus-card {
+  background: white;
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.bus-left h3,
+.bus-right h3,
+.bus-middle h4 {
+  margin: 0;
+}
+
+.bus-number {
+  color: gray;
+  margin-top: 6px;
+}
+
+.bus-middle {
+  text-align: center;
+}
+
+.bus-middle p {
+  color: #555;
+  margin-top: 8px;
+}
+
+.bus-right {
+  text-align: right;
+}
+
+.bus-right h3 {
+  color: #d9303e;
+  margin-bottom: 10px;
+}
+
+.seat-btn {
+  border: 1px solid #d9303e;
+  background: white;
+  color: #d9303e;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.seat-btn:hover {
+  background: #d9303e;
+  color: white;
+}
+
+.no-result {
+  text-align: center;
+  margin-top: 30px;
+  color: #666;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .search-row {
+    grid-template-columns: 1fr;
+  }
+
+  .bus-card {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .bus-right {
+    text-align: center;
+  }
+}

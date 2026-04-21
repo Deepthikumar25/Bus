@@ -1,0 +1,40 @@
+<div class="topbar">
+  <div class="brand">BusBooking</div>
+</div>
+
+<div class="passenger-page">
+  <div class="passenger-card">
+    <h2>Passenger Details</h2>
+
+    <div class="trip-info">
+      <p><strong>Bus:</strong> {{ bus?.busName }}</p>
+      <p><strong>Route:</strong> {{ bus?.fromCity }} → {{ bus?.toCity }}</p>
+      <p><strong>Seats:</strong> {{ seats.join(', ') }}</p>
+      <p><strong>Total Price:</strong> ₹{{ totalPrice }}</p>
+    </div>
+
+    <div class="form-group">
+      <label>Name</label>
+      <input [(ngModel)]="name" type="text" placeholder="Enter passenger name">
+    </div>
+
+    <div class="form-group">
+      <label>Age</label>
+      <input [(ngModel)]="age" type="number" placeholder="Enter age">
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input [(ngModel)]="email" type="email" placeholder="Enter email">
+    </div>
+
+    <div class="form-group">
+      <label>Phone</label>
+      <input [(ngModel)]="phone" type="text" placeholder="Enter phone number">
+    </div>
+
+    <button class="confirm-btn" (click)="confirmBooking()">
+      Confirm Booking
+    </button>
+  </div>
+</div>

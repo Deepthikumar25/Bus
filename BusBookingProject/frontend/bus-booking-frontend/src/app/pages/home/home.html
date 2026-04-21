@@ -1,0 +1,55 @@
+<div class="topbar">
+  <div class="brand">BusBooking</div>
+</div>
+
+<div class="home-wrapper">
+  <div class="search-card">
+    <h2>Search Buses</h2>
+
+    <div class="search-row">
+      <input
+        type="text"
+        [(ngModel)]="fromCity"
+        class="form-control"
+        placeholder="From City"
+      >
+
+      <input
+        type="text"
+        [(ngModel)]="toCity"
+        class="form-control"
+        placeholder="To City"
+      >
+
+      <button class="search-btn" (click)="searchBuses()">
+        Search
+      </button>
+    </div>
+  </div>
+
+  <div class="results-section" *ngIf="buses.length > 0">
+    <div class="bus-card" *ngFor="let bus of buses">
+      <div class="bus-left">
+        <h3>{{ bus.busName }}</h3>
+        <p class="bus-number">{{ bus.busNumber }}</p>
+      </div>
+
+      <div class="bus-middle">
+        <h4>{{ bus.fromCity }} → {{ bus.toCity }}</h4>
+        <p>
+          {{ bus.departureTime | date:'shortTime' }} -
+          {{ bus.arrivalTime | date:'shortTime' }}
+        </p>
+      </div>
+
+      <div class="bus-right">
+        <h3>₹{{ bus.price }}</h3>
+        <button class="seat-btn" (click)="goToSeats(bus)">Select Seats</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="no-result" *ngIf="searchClicked && buses.length === 0">
+    No buses found
+  </div>
+</div>

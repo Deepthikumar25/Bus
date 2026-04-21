@@ -1,0 +1,43 @@
+<div class="topbar">
+  <div class="brand">BusBooking</div>
+</div>
+
+<div class="seat-page" *ngIf="selectedBus">
+  <div class="bus-info-card">
+    <h2>{{ selectedBus.busName }}</h2>
+    <p>{{ selectedBus.fromCity }} → {{ selectedBus.toCity }}</p>
+    <p>
+      {{ selectedBus.departureTime | date:'shortTime' }} -
+      {{ selectedBus.arrivalTime | date:'shortTime' }}
+    </p>
+    <h3>₹{{ selectedBus.price }} per seat</h3>
+  </div>
+
+  <div class="seat-layout-card">
+    <h3>Select Your Seats</h3>
+
+    <div class="seat-grid">
+      <div
+        *ngFor="let seat of seats"
+        class="seat"
+        [class.booked]="seat.booked"
+        [class.selected]="seat.selected"
+        (click)="toggleSeat(seat)"
+      >
+        {{ seat.seatNumber }}
+      </div>
+    </div>
+
+    <div class="legend">
+      <span><span class="box available"></span> Available</span>
+      <span><span class="box selected-box"></span> Selected</span>
+      <span><span class="box booked-box"></span> Booked</span>
+    </div>
+
+    <div class="summary-box">
+      <p><strong>Selected Seats:</strong> {{ selectedSeats.join(', ') || 'None' }}</p>
+      <p><strong>Total Price:</strong> ₹{{ getTotalPrice() }}</p>
+      <button class="continue-btn" (click)="goToPassenger()">Continue</button>
+    </div>
+  </div>
+</div>
